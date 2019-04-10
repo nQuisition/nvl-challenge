@@ -67,16 +67,17 @@ describe("triangler computation", (): void => {
 describe("triangler", (): void => {
   const trianglerModule = rewire("../dist-test/triangler.js");
   const { triangle } = trianglerModule;
-  const mockTriangleComputer = jest.fn(
-    (): TriangleComputationResult => ({ result: "G", computation: [["G"]] })
-  );
-  /* eslint-disable no-underscore-dangle */
-  trianglerModule.__set__(
-    "exports.triangleWithComputation",
-    mockTriangleComputer
-  );
-  /* eslint-enable no-underscore-dangle */
+
   it("uses the triangle computation function", (): void => {
+    const mockTriangleComputer = jest.fn(
+      (): TriangleComputationResult => ({ result: "G", computation: [["G"]] })
+    );
+    /* eslint-disable no-underscore-dangle */
+    trianglerModule.__set__(
+      "exports.triangleWithComputation",
+      mockTriangleComputer
+    );
+    /* eslint-enable no-underscore-dangle */
     const result: Color = triangle("G");
     expect(mockTriangleComputer.mock.calls.length).toBe(1);
     expect(mockTriangleComputer.mock.calls[0]).toEqual(["G"]);
