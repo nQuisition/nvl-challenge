@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "esnext",
+    "allowJs": true
+  },
+  "include": ["../src/**/*"],
+  "exclude": ["../src/**/*.test.ts", "src/**/*.test.tsx"]
+}

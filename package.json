@@ -1,0 +1,33 @@
+{
+  "name": "nvl-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint src/**",
+    "build-dev": "npm run lint && tsc -p config/tsconfig.dev.json",
+    "build-quick": "tsc -p config/tsconfig.dev.json",
+    "test": "tsc -p config/tsconfig.test.json && jest --verbose --config ./config/jest.config.js",
+    "pretty-triangle": "npm run build-quick && node dist/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "@typescript-eslint/eslint-plugin": "^1.6.0",
+    "@typescript-eslint/parser": "^1.6.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "jest": "^24.7.1",
+    "ts-jest": "^24.0.2"
+  },
+  "dependencies": {
+    "@types/rewire": "^2.5.28",
+    "rewire": "^4.0.1",
+    "typescript": "^3.4.3"
+  }
+}
