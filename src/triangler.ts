@@ -66,7 +66,7 @@ export const triangleWithComputation = (
   if (startingRowString.length <= 0) {
     return { result: null, computation: null };
   }
-  let row = [...startingRowString.split("")] as Color[];
+  let row = [...startingRowString] as Color[];
   const computation = [[...row]];
   while (row.length > 1) {
     const nextRow: Color[] = [];
